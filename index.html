@@ -41,49 +41,101 @@
             <li>Компаниям друзей.</li>
             <li>Семьям с детьми старше 12 лет.</li>
         </ul>
-
-        <table width="500">
-                <th width="200">Тариф</th>
-                <th width="300">Группа</th>
-            <tr>
-                <td width="200">Эконом</td>
-                <td width="300">От 15 человек</td>
-            </tr>
-            <tr>
-                <td width="200">Комфорт</td>
-                <td width="300">От 7 человек</td>
-            </tr>
-        </table>
-
-        <form>
-            <ul>
-                <li>
-                    <input type="checkbox" name="service" value="transfer" data-price="100">
-                    <label>Трансфер до метса начала экскурсии</label>
-                </li>
-                <li>
-                    <input type="checkbox" name="service" value="disable" data-price="100">
-                    <label>Трансфер для людей из маломобильных групп населения</label>
-                </li>
-            </ul>  
-        </form>
-        <p2 id="total-price"> Сумма: 0 рублей</p2>
-        <script>
-            const checkboxes = document.querySelectorAll('input[name="services"]');
-            const totalPriceElement = document.getElementById('total-price');
         
-            checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', () => {
-                let totalPrice = 0;
+        <div class="container-tarid" id="prices">
+            <h2 class="sub-heading">Какие есть тарифы?</h2>   
+            <p class="test-tarif"> Мы знаем, что каждое путешествие уникально. Поэтому разработали несколько тарифов, чтобы вы могли выбрать самый комфортный для себя. Независимо от выбранного тарифа, вас ждет незабываемое путешествие.</p> 
+            <table>
+                <tr>
+                    <th>Тариф</th>
+                    <th>Группа</th>
+                    <th>Стоимость</th>
+                    <th>Программа</th>
+                </tr>
+                <tr>
+                    <td>Эконом</td>
+                    <td>От 15 человек</td>
+                    <td>1500 руб.</td>
+                    <td>Пешая прогулка,<br>Погрулка по крышам</td>
+                </tr>
+                <tr>
+                    <td>Комфорт</td>
+                    <td>От 7 человек</td>
+                    <td>2500 руб.</td>
+                    <td>Пешая прогулка,<br>Экскурсия по рекам и каналам,<br>Погрулка по крышам</td>
+                </tr>
+                <tr>
+                    <td width="100">Премиум</td>
+                    <td width="100">От 4 до 6 человек</td>
+                    <td width="100">4200 руб.</td>
+                    <td width="200">Пешая прогулка,<br>Экскурсия по рекам и каналам,<br>Погрулка по крышам,<br>Экскурсия в Петергоф</td>
+                </tr>
+                <tr>
+                    <td width="100">Люкс</td>
+                    <td width="100">1-2 человека</td>
+                    <td width="100">6000 руб.</td>
+                    <td width="200">Эксклюзивные маршруты под ключ,<br>Пешая прогулка,<br>Экскурсия по рекам и каналам,<br>Погрулка по крышам,<br>Экскурсия в Петергоф</td>
+                </tr>
+            </table>
+            <p>Мы предлагаем различные варианты оплаты. Менеджер поможет подобрать оптимальный вариант.</p>
+         </div>
+
+        <div class="dop">
+            <h2>Дполнительные услуги</h2>
+            <form class="dop-form">
+                <ul>
+                    <li>
+                        <input type="checkbox" name="service" value="transfer" data-price="100">
+                        <label>Трансфер до метса начала экскурсии</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="service" value="disabled_transfer" data-price="100">
+                        <label>Трансфер для людей из маломобильных групп населения</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="services" value="breakfast" data-price="100">
+                        <label>Завтрак</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="services" value="lunch" data-price="100">
+                        <label>Обед</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="services" value="dinner" data-price="100">
+                        <label>Ужин</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="services" value="translator" data-price="100">
+                        <label>Переводчик с русского на английский язык</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="services" value="children_guide" data-price="100">
+                        <label>Экскурсовод для детей</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="services" value="sign_language_interpreter" data-price="100">
+                        <label>Сурдопереводчик</label>
+                    </li>
+                </ul>  
+            </form>
+            <p2 id="total-price"> Сумма: 0 рублей</p2>
+            <script>
+                const checkboxes = document.querySelectorAll('input[name="services"]');
+                const totalPriceElement = document.getElementById('total-price');
+        
                 checkboxes.forEach(checkbox => {
-                if (checkbox.checked) {
-                    totalPrice += parseInt(checkbox.getAttribute('data-price'));
-                }
+                checkbox.addEventListener('change', () => {
+                    let totalPrice = 0;
+                    checkboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        totalPrice += parseInt(checkbox.getAttribute('data-price'));
+                    }
+                    });
+                    totalPriceElement.textContent = `Сумма: ${totalPrice} рублей`;
                 });
-                totalPriceElement.textContent = `Сумма: ${totalPrice} рублей`;
-            });
-            });
-        </script>
+                });
+            </script>
+        </div>
 
         <h2>Отзывы клиентов</h2>
         <figure>
@@ -117,16 +169,24 @@
             Суперский гид рассказал нам удивительные истории о городе и его жителях. Отдельно отмечу маршрут. 
             Не первый раз в Питере, но эти локации увидела впервые. Класс!</blockquote>
 
-        <form>
+        <div class="column">
+            <h5>Как записаться на экскурсию</h5>
+            <p>Для подробной информации заполните форму.<br>Наши менеджеры с вами свяжутся.</p>
+            <form>
             <input type="text" placeholder="Имя"><br>
             <input type="text" placeholder="Фамилия"><br>
+            <input type="email" placeholder="E-mail"><br>
+            <input type="tel" placeholder="Номер телефона"><br>
             <button type="submit">Отправить</button>
-        </form> 
+            </form>
+        </div>
         
         <select name="tariff" id="tariff">
             <label for="tariff"> Выберите тариф</label>
             <option value="economy">Эконом</option>
             <option value="comfort">Комфорт</option>
+            <option value="premium">Премиум</option>
+            <option value="luxury">Люкс</option>
         </select>
 
         <a href="https://t.me/Akademik_psi">Свяжитесь с автором экскурсии</a>
