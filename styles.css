@@ -1,3 +1,129 @@
-h1 {
-    color: red;
+@font-face {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: url("./font/OpenSans-Regular.woff2") format(woff2),
+    url("./font/OpenSans-Regular.woff") format(woff);
+}
+
+
+@font-face {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 700;
+    src: url("./font/OpenSans-Bold.woff2") format(woff2),
+    url("./font/OpenSans-Bold.woff") format(woff);
+}
+
+h1,h2{
+    font-size: 40px;
+}
+
+p{
+    font-size: 20px;
+}
+
+table{
+    font-size: 16px;
+}
+
+main{
+    font-size: 14px;
+}
+
+.page-body{
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+}
+
+.intro{
+    background-image: url(./images/intro.png);
+    color: #fff;
+}
+
+.intro-title{
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000;
+}
+.page-content{
+    background-image: linear-gradient(90deg, #fff 50%, #242424 50%);
+}
+
+.program-title{
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.program-image-wraper{
+    overflow: hidden;
+}
+
+.program-image{
+    object-fit: cover;
+}
+
+.program-subtitle{
+    font-size: 24px;
+}
+
+.auditory-title{
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.auditory-image-wraper{
+    overflow: hidden;
+}
+
+.auditory-image{
+    object-fit: cover;
+}
+
+.price-title{
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.price-table th{
+    font-weight: 700;
+    color: #fff;
+    text-align: left;
+}
+
+.price-table td{
+    font-size: 16px;
+}
+
+.price-caption{
+    font-size: 14px;
+    color: #9d9d9d;
+}
+
+.service-title{
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.service-list table{
+    font-size: 16px;
+}
+
+.service-price{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.contacts-btn{
+    color: #fff;
+    font-size: 40px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.contacts-btn:hover::after{
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 0.5;
 }
