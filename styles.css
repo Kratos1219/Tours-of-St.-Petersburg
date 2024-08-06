@@ -2,6 +2,7 @@
     font-family: "Open Sans";
     font-style: normal;
     font-weight: 400;
+    font-display: swap;
     src:
         url("./fonts/OpenSans-Regular.woff2") format("woff2"),
         url("./fonts/OpenSans-Regular.woff") format("woff");
@@ -11,7 +12,7 @@
     font-family: "Open Sans";
     font-style: normal;
     font-weight: 700;
-    font-weight: 400;
+    font-display: swap;
     src:
         url("./fonts/OpenSans-Bold.woff2") format("woff2"),
         url("./fonts/OpenSans-Bold.woff") format("woff");
@@ -26,7 +27,7 @@
     margin: 0;
     font-family: "Open Sans", sans-serif;
     font-size: 20px;
-    color: #000000;
+    color: #000;
 }
 
 .container {
@@ -82,6 +83,7 @@
 
 .page-section {
     position: relative;
+    padding: 40px 80px 40px 0;
 }
 
 .page-section-with-bg::before {
@@ -100,7 +102,7 @@
     font-weight: 700;
 }
 
-.program-tex-wrapper p {
+.program-text-wrapper p {
     margin: 0;
 }
 
@@ -201,10 +203,6 @@
     margin: 0;
 }
 
-.prices-text-wrapper {
-    margin: 0;
-}
-
 .prices-text-wrapper p:not(:last-child) {
     margin-bottom: 10px;
 }
@@ -232,8 +230,8 @@
     border-radius: 15px 0 0 15px;
 }
 
-.prices-table th: :last-child,
-.prices-table td: :last-child {
+.prices-table th:last-child,
+.prices-table td:last-child {
     border-radius: 0 15px 15px 0
 }
 
@@ -265,7 +263,7 @@
 
 .services-row {
     display: grid;
-    grid-template-columns: lfr 250px;
+    grid-template-columns: 1fr 250px;
     gap: 40px;
     margin-top: 30px;
 }
@@ -295,12 +293,23 @@
     white-space: nowrap;
 }
 
+.page-section.reviews {
+    padding-bottom: 0;
+    margin-bottom: 20px;
+}
+
 .reviews-title {
+    margin: 0;
+    margin-bottom: 30px;
     font-size: 40px;
     font-weight: 700;
 }
 
 .reviews-item {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 40px;
+    padding: 20px 80px 20px 40px;
     border-radius: 20px;
 }
 
@@ -320,8 +329,9 @@
 }
 
 .reviews-item-image {
-    width: 100px;
-    height: 100px;
+    display: block;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -348,6 +358,7 @@
 }
 
 .contacts-content {
+    padding: 20px 280px 20px 40px;
     border-radius: 20px;
 }
 
@@ -383,9 +394,9 @@
     position: relative;
     display: flex;
     justify-content: space-between;
-    border-radius: 15px;
     padding: 20px 40px;
     padding-right: 80px;
+    border-radius: 15px;
     color:#fff;
     font-size: 40px;
     font-weight: 700;
@@ -444,7 +455,7 @@
 }
 
 .card-image {
-    display:  block;
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -468,7 +479,7 @@
 
 .page-footer {
     padding: 30px 0;
-    color: #000000;
+    color: #fff;
 }
 
 .page-footer .container {
